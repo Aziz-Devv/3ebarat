@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>اقتباسات ملهمة</title>
+    
+    <!-- الخطوط -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Kufi+Arabic:wght@400;700&family=Noto+Sans+Arabic:wght@400;700&display=swap" rel="stylesheet">
+    
+    <!-- الأيقونات -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- مكتبات الحركة -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    
+    <!-- ملفات المشروع -->
+    <link rel="stylesheet" href="style.css">
+    
+    <style>
+        /* نمط فوري لمنع وميض الصفحة */
+        body {
+            visibility: hidden;
+            background-color: #111;
+        }
+    </style>
+</head>
+<body>
+    <!-- صفحة الترحيب -->
+    <div id="welcome" class="welcome-screen">
+        <div id="particles-js"></div>
+        <div class="welcome-content" data-aos="fade-up">
+            <h1>اقتباسات ملهمة</h1>
+            <p>مجموعة من الاقتباسات المميزة لإلهام يومك</p>
+            <button onclick="showCategories()" class="start-btn">
+                <i class="fas fa-arrow-circle-right"></i>
+                ابدأ الرحلة
+            </button>
+        </div>
+    </div>
+
+    <!-- صفحة الأقسام -->
+    <div id="categories" class="categories-container">
+        <div class="category" onclick="showQuotes('self')" data-aos="fade-up">
+            <div class="bg-animation" id="particles-self"></div>
+            <i class="fas fa-user-circle category-icon"></i>
+            <h3>تطوير الذات</h3>
+        </div>
+
+        <div class="category" onclick="showQuotes('love')" data-aos="fade-up">
+            <div class="bg-animation" id="particles-love"></div>
+            <i class="fas fa-heart category-icon"></i>
+            <h3>الحب</h3>
+        </div>
+
+        <div class="category" onclick="showQuotes('challenges')" data-aos="fade-up">
+            <div class="bg-animation" id="particles-challenges"></div>
+            <i class="fas fa-mountain category-icon"></i>
+            <h3>التحديات</h3>
+        </div>
+
+        <div class="category" onclick="showQuotes('friendship')" data-aos="fade-up">
+            <div class="bg-animation" id="particles-friendship"></div>
+            <i class="fas fa-users category-icon"></i>
+            <h3>الصداقة</h3>
+        </div>
+
+        <div class="category" onclick="showQuotes('athkar')" data-aos="fade-up">
+            <div class="bg-animation" id="particles-athkar"></div>
+            <i class="fas fa-mosque category-icon"></i>
+            <h3>الأذكار</h3>
+        </div>
+
+        <div class="category" onclick="showQuotes('success')" data-aos="fade-up">
+            <div class="bg-animation" id="particles-success"></div>
+            <i class="fas fa-trophy category-icon"></i>
+            <h3>النجاح</h3>
+        </div>
+
+        <div class="category" onclick="showQuotes('wisdom')" data-aos="fade-up">
+            <div class="bg-animation" id="particles-wisdom"></div>
+            <i class="fas fa-brain category-icon"></i>
+            <h3>الحكمة</h3>
+        </div>
+
+        <div class="category" onclick="showQuotes('life')" data-aos="fade-up">
+            <div class="bg-animation" id="particles-life"></div>
+            <i class="fas fa-star category-icon"></i>
+            <h3>الحياة</h3>
+        </div>
+    </div>
+
+    <!-- صفحة الاقتباسات -->
+    <div id="quotes-container" class="quotes-container">
+        <div class="quotes-header">
+            <button onclick="showCategories()" class="back-btn">
+                <i class="fas fa-arrow-right"></i>
+                عودة للأقسام
+            </button>
+            <div class="search-box">
+                <input type="text" id="search-input" placeholder="ابحث في الاقتباسات..." oninput="searchQuotes()">
+                <span class="search-icon" onclick="clearSearch()">
+                    <i class="fas fa-search"></i>
+                </span>
+            </div>
+        </div>
+        <div id="quotes-grid" class="quotes-grid"></div>
+    </div>
+
+    <!-- المكتبات -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/particles.js/2.0.0/particles.min.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    
+    <!-- ملف الجافاسكربت -->
+    <script src="script.js"></script>
+
+    <script>
+        // إظهار الصفحة بعد تحميل كل شيء
+        window.addEventListener('load', function() {
+            document.body.style.visibility = 'visible';
+        });
+    </script>
+</body>
+</html>
